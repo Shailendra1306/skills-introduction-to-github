@@ -1,0 +1,77 @@
+MATRIX MULTIPICATION CALCULATION USING C-PROGRAMMING
+
+https://onlinegdb.com/eoeDc7y2l
+<script src="//onlinegdb.com/embed/js/eoeDc7y2l?theme=undefined"></script>
+
+
+
+#include <stdio.h>
+
+int main()
+{
+	int r,c,i,j,k;
+	printf("Enter no. of row : ");
+	scanf("%d",&r);
+	printf("Enter no. of column : ");
+	scanf("%d",&c);
+	int a[r][c],b[r][c];
+	int m[15][15]= {0};
+	for(i=0; i<r; i++) {
+		for(j=0; j<c; j++) {
+			printf("Enter element of a[%d][%d] : ",i,j);
+			scanf("%d",&a[i][j]);
+		}
+	}
+	for(i=0; i<r; i++) {
+		for(j=0; j<c; j++) {
+			printf("Enter element of b[%d][%d] : ",i,j);
+			scanf("%d",&b[i][j]);
+		}
+	}
+	printf("the first matrix is : \n");
+	for(i=0; i<r; i++) {
+		for(j=0; j<c; j++) {
+			printf("%d\t",a[i][j]);
+		}
+		printf("\n");
+	}
+	printf("the second matrix is : \n");
+	for(i=0; i<r; i++) {
+		for(j=0; j<c; j++) {
+			printf("%d\t",b[i][j]);
+		}
+		printf("\n");
+	}
+	printf("The multiplication of given two matrix is : \n");
+	if(r==c)
+	{
+		for(i=0; i<r; i++)
+		{
+
+			for(j=0; j<c; j++)
+			{
+				for(k=0; k<r; k++)
+				{
+					m[i][j] += a[i][k] * b[k][j];
+
+				}
+			}
+			
+		}
+		for(i=0; i<r; i++)
+		{
+			for(j=0; j<c; j++)
+			{
+				printf("%d\t",m[i][j]);
+			}
+			printf("\n");
+		}
+
+	}
+	else
+	{
+		printf("multification not possible as row1 is not equal to column2 ");
+	}
+
+	return 0;
+}
